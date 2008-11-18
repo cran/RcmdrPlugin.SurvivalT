@@ -1,0 +1,27 @@
+# Some Rcmdr menus for the SurvivalT package
+# When the plug-in is loaded, these menus are merged with the standard Rcmdr menus
+
+# last modified: 18 11 2008 by Daniel Leucuta
+
+#   type    menu/item      operation/parent  label                              command/menu                activation    install?
+menu    survMenu       topMenu         ""                                      ""                          ""    ""
+item    topMenu         cascade         "SurvivalT"                                 survMenu                   ""                      ""
+
+item    survMenu       command         "Kaplan Meier graph..."              fncKaplanMeier         "numericP() && factorsP()"                      ""
+item    survMenu       command         "Log-Rank test..."              fncLogRankTest         "numericP() && factorsP()"                      ""
+item    survMenu       command         "Log-LogSurvival graph..."              fncLogLogSurvival         "numericP() && factorsP()"                      ""
+
+item    survMenu       command         "Cox Model..."              fncCoxModel         "numericP() && factorsP()"    ""
+item    survMenu       command         "Cox PH assumption test(Schoenfeld/t)"  fncCoxPHSchoenfeld            "CoxP()"    ""
+item    survMenu       command         "Cox PH assumption graph(Schoenfeld/t)"  fncCoxPHSchoenfeldGraph            "CoxP()"    ""
+item    survMenu       command         "Cox Influence plot"  fncCoxInfluencePlot            "CoxP()"     ""
+
+#menu    coxMenu       survMenu         ""                                      ""                          ""    ""
+#item    survMenu         cascade        "Cox"                                 coxMenu                   ""    ""
+
+#item    coxMenu       command         "Cox Model..."              fncCoxModel         "numericP()"    ""
+#item    coxMenu       command         "Cox PH assumption test(Schoenfeld/t)"  fncCoxPHSchoenfeld            ""    ""
+
+#item    coxMenu       command         "Cox PH assumption graph(Schoenfeld/t)"  fncCoxPHSchoenfeldGraph            "CoxP()"    ""
+#item    coxMenu       command         "Cox Influence plot"  fncCoxInfluencePlot            "CoxP()"    ""
+
